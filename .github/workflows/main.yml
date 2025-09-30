@@ -24,12 +24,8 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Prepare deployment package
-        run: |
-          cp package.json dist/hello-world-app/
-          cd dist/hello-world-app
-          zip -r ../deploy.zip .
-      
+      - name: Zip output
+        run: zip -r build.zip ./dist/hello-world-app
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
