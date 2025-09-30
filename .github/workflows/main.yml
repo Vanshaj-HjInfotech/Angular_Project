@@ -24,6 +24,7 @@ jobs:
       - name: Build the app
         run: npm run build
 
+
       - name: Zip output
         run: zip -r build.zip ./dist/hello-world-app
 
